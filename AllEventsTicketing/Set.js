@@ -26,8 +26,14 @@ function Set() {
 
         var resultList = []; // create a resultsList array.
 
-		resultList.push(this.symmetricDifference(listA, listB));
-		resultList.push(this.intersection(listA, listB));
+        if(listA === null || listB === null) {
+            return null;
+        }
+
+		var symmetricDiff = this.symmetricDifference(listA, listB);
+		var intersection = this.intersection(listA, listB);
+
+		resultList = symmetricDiff.concat(intersection);
 
 	   return resultList;
 	};
@@ -35,6 +41,10 @@ function Set() {
 	this.relativeComplement = function(listA, listB) {
 
         var resultList = []; // create a resultsList array.
+
+        if(listA === null || listB === null) {
+            return null;
+        }
 
 		// Find the relative complement of listB/listA.
         for(var a = 0; a < listA.length; a ++) {
@@ -59,8 +69,14 @@ function Set() {
 
         var resultList = []; // create a resultsList array.
 
-		resultList.push(this.relativeComplement(listA, listB));
-		resultList.push(this.relativeComplement(listB, listA));
+        if(listA === null || listB === null) {
+            return null;
+        }
+
+		var relCompA = this.relativeComplement(listA, listB);
+		var relCompB = this.relativeComplement(listB, listA);
+
+		resultList = relCompA.concat(relCompB);
 
 	   return resultList;
 	};
