@@ -20,47 +20,48 @@ function Set() {
 			}
     }
 	   return resultList;
-	}
-    
-    
-    
+	};
+
 	this.union = function(listA, listB) {
 
-	   var resultList = new Array();
-       
-	   /*-------------------------------Insert your code here -------------------------------------*/
-	   
-	   /*-------------------------------Insert your code here -------------------------------------*/ 
-	   
+        var resultList = []; // create a resultsList array.
+
+		resultList.push(this.symmetricDifference(listA, listB));
+		resultList.push(this.intersection(listA, listB));
+
 	   return resultList;
-	}
-
-
-
+	};
 
 	this.relativeComplement = function(listA, listB) {
 
-	   var resultList = new Array();
-       
-	   /*-------------------------------Insert your code here -------------------------------------*/
-	   	   
-	   /*-------------------------------Insert your code here -------------------------------------*/
-       
+        var resultList = []; // create a resultsList array.
+
+		// Find the relative complement of listB/listA.
+        for(var a = 0; a < listA.length; a ++) {
+			var nextLAValue = listA[a];
+			var valuesMatch = false;
+
+            for(var i = 0; i < listB.length; i++) {
+                if(listB[i] === nextLAValue) {
+                    valuesMatch = true;
+                }
+            }
+
+            if(!valuesMatch) {
+            	resultList.push(nextLAValue);
+			}
+        }
+
 	   return resultList;
-	}
-
-
+	};
 
 	this.symmetricDifference = function(listA, listB) {
 
-	   var resultList = new Array();
-       
-	   /*-------------------------------Insert your code here -------------------------------------*/
+        var resultList = []; // create a resultsList array.
 
-	   /*-------------------------------Insert your code here -------------------------------------*/
-       
+		resultList.push(this.relativeComplement(listA, listB));
+		resultList.push(this.relativeComplement(listB, listA));
+
 	   return resultList;
-	}	
-	
-
+	};
 }

@@ -2,7 +2,7 @@ Array.prototype.equals = function( array ) {
   
   return this.length === array.length &&
          this.every( function(this_i,i) { return this_i === array[i] } )  
-  }
+  };
 
 var setOperations = new Set();
 
@@ -41,7 +41,7 @@ QUnit.test( "Relative Compliment Test", function( assert ) {
     var expectedList = ['Bill', 'Mark','Susan', 'Mike', 'Steve', 'Jane',
                         'Bob', 'Wayne', 'Connie', 'Jim' ];
     
-    assert.ok(expectedList.equals(setOperations.relativeCompliment(listA, listB)));
+    assert.ok(expectedList.equals(setOperations.relativeComplement(listA, listB)));
     assert.equal(setOperations.relativeComplement(null, listB), null);
     assert.equal(setOperations.relativeComplement(listA, null), null);
     assert.equal(setOperations.relativeComplement([], listB).length, 0);
