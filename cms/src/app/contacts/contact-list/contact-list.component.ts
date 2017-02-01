@@ -7,12 +7,16 @@ import {Contact} from "../contact";
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
-  contact: Contact[] = [];
+  contacts: Contact[] = [];
+  @Output() contactSelected = new EventEmitter();
+  contact = new Contact('104', 'Braxton', 'brax.ward@gmail.com', '(801) 549-8876', 'https://placehold.it/140x100', 'personal')
 
-  Braxton = new Contact('104', 'Braxton', 'brax.ward@gmail.com', '(801) 549-8876', 'C:\Users\BRAX10\Pictures\Braxton Head Shot.jpg', 'personal')
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelected(contact: Contact) {
+    this.contactSelected.emit(contact);
+  }
 }

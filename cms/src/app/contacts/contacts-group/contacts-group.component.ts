@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {Contact} from "../contact";
 
 @Component({
   selector: 'app-contacts-group',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacts-group.component.css']
 })
 export class ContactsGroupComponent implements OnInit {
-
+  @Input() selectedContact: Contact
   constructor() { }
 
   ngOnInit() {
