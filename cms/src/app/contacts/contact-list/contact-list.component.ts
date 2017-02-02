@@ -8,7 +8,7 @@ import {Contact} from "../contact";
 })
 export class ContactListComponent implements OnInit {
   contacts: Contact[] = [];
-  @Output() contactSelected = new EventEmitter();
+  @Output() contactSelected: EventEmitter<Contact> = new EventEmitter();
   contact = new Contact('104', 'Braxton', 'brax.ward@gmail.com', '(801) 549-8876', 'https://placehold.it/140x100', 'personal')
 
   constructor() { }
@@ -17,6 +17,7 @@ export class ContactListComponent implements OnInit {
   }
 
   onSelected(contact: Contact) {
+    console.log(contact)
     this.contactSelected.emit(contact);
   }
 }
