@@ -3,7 +3,7 @@
       <app-contact-list (selectedContact)="selectedContact = $event"></app-contact-list>
   </div>
   <div class="col-md-4" *ngIf="selectedContact != null">
-    <app-contacts-detail [selectedContact]="selectedContact"></app-contacts-detail>
-    <app-contacts-group [selectedContact]="selectedContact"></app-contacts-group>
+    <app-contacts-detail *ngIf="selectedContact.group === null" [selectedContact]="selectedContact"></app-contacts-detail>
+    <app-contacts-group *ngIf="selectedContact.group !== null" [selectedContact]="selectedContact"></app-contacts-group>
   </div>
 </div>
