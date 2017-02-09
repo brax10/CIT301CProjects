@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Contact} from "./contact";
 
 @Component({
@@ -12,9 +12,5 @@ export class ContactsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  ngOnChanges() {
-    console.log(this.contact);
   }
 }
