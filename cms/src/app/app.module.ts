@@ -11,6 +11,9 @@ import { ContactItemComponent } from './contacts/contact-list/contact-item.compo
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
 import { ContactsGroupComponent } from './contacts/contacts-group/contacts-group.component';
 import { DropdownDirective } from './dropdown.directive';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageListComponent } from './messages/message-list/message-list.component';
+import { MessageItemComponent } from './messages/message-list/message-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { DropdownDirective } from './dropdown.directive';
     ContactItemComponent,
     ContactsDetailComponent,
     ContactsGroupComponent,
-    DropdownDirective
+    DropdownDirective,
+    MessagesComponent,
+    MessageListComponent,
+    MessageItemComponent
   ],
   imports: [
     BrowserModule,
