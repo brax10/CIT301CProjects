@@ -3,7 +3,7 @@ import {Contact} from "./contact";
 
 @Injectable()
 export class ContactsService {
-  contacts: Contact[];
+  contacts: Contact[] = [];
   constructor() { }
 
   getContact(idx: number) {
