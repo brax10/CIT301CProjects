@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Message} from "./message";
-import { MOCKMESSAGES } from "./MOCKMESSAGES";
+import {MOCKMESSAGES} from "./MOCKMESSAGES";
 
 @Injectable()
 export class MessagesService {
-  messages: Message[];
+  messages: Message[] = [];
 
   constructor() { }
 
@@ -13,6 +13,6 @@ export class MessagesService {
   }
 
   getMessages() {
-    // this.mockMessages = this.messages;
+    this.messages = MOCKMESSAGES;
   }
 }
