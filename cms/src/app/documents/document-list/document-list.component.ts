@@ -12,7 +12,7 @@ export class DocumentListComponent implements OnInit {
   constructor(private documentsService: DocumentsService) { }
 
   ngOnInit() {
-    this.documents = this.documentsService.document;
+    this.documents = this.documentsService.getDocuments();
   }
 
 }

@@ -13,7 +13,7 @@ export class MessageListComponent implements OnInit {
   constructor(private messagesService: MessagesService) { }
 
   ngOnInit() {
-    this.messages = this.messagesService.messages;
+    this.messages = this.messagesService.getMessages();
   }
 
 }

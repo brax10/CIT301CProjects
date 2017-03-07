@@ -14,5 +14,7 @@ export class MessagesService {
 
   getMessages() {
     this.messages = MOCKMESSAGES;
+
+    return this.messages;
   }
 }
