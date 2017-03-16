@@ -9,7 +9,6 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item.component';
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
-import { ContactsGroupComponent } from './contacts/contacts-group/contacts-group.component';
 import { DropdownDirective } from './dropdown.directive';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
@@ -19,6 +18,8 @@ import { DocumentListComponent } from './documents/document-list/document-list.c
 import { DocumentItemComponent } from './documents/document-list/document-item.component';
 import {routing} from "./app-routing";
 import { MessageNewComponent } from './messages/message-new/message-new.component';
+import { DocumentViewComponent } from './documents/document-view/document-view.component';
+import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,6 @@ import { MessageNewComponent } from './messages/message-new/message-new.componen
     ContactListComponent,
     ContactItemComponent,
     ContactsDetailComponent,
-    ContactsGroupComponent,
     DropdownDirective,
     MessagesComponent,
     MessageListComponent,
@@ -36,7 +36,9 @@ import { MessageNewComponent } from './messages/message-new/message-new.componen
     DocumentsComponent,
     DocumentListComponent,
     DocumentItemComponent,
-    MessageNewComponent
+    MessageNewComponent,
+    DocumentViewComponent,
+    DocumentEditComponent
   ],
   imports: [
     BrowserModule,
