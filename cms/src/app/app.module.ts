@@ -17,6 +17,8 @@ import { MessageItemComponent } from './messages/message-list/message-item.compo
 import { DocumentsComponent } from './documents/documents.component';
 import { DocumentListComponent } from './documents/document-list/document-list.component';
 import { DocumentItemComponent } from './documents/document-list/document-item.component';
+import {routing} from "./app-routing";
+import { MessageNewComponent } from './messages/message-new/message-new.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,14 @@ import { DocumentItemComponent } from './documents/document-list/document-item.c
     MessageItemComponent,
     DocumentsComponent,
     DocumentListComponent,
-    DocumentItemComponent
+    DocumentItemComponent,
+    MessageNewComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
