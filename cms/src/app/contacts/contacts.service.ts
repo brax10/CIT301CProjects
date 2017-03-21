@@ -10,6 +10,10 @@ export class ContactsService {
       return this.contacts[idx];
   }
 
+  getContactById(id: string) {
+    return this.contacts.find((contact: Contact) => contact.contactId == id);
+  }
+
   getContacts() {
     // individual contacts
     this.contacts[0] = new Contact("1", "Rex Barzee", "barzeer@byui.edu", "208-496-3768",
