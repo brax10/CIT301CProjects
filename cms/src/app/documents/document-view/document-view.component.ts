@@ -44,4 +44,9 @@ export class DocumentViewComponent implements OnInit, OnDestroy {
     let currentUrl = this.document.url;
     this.nativeWindow.open(currentUrl);
   }
+
+  onDelete() {
+    this.documentsService.deleteDocument(this.document);
+    this.router.navigate(['documents']);
+  }
 }
