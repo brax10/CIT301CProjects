@@ -9,7 +9,7 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-xs-12">
-          <app-message-item> *ngFor="let messages of messages" </app-message-item>
+          <app-message-item *ngFor="let messages of messages" [message]="messages"></app-message-item>
       </div>
     </div>
   </div>

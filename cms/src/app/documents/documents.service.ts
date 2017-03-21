@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {MOCKDOCUMENTS} from "./MOCKDOCUMENTS";
+import { Document } from  "./document"
 
 @Injectable()
 export class DocumentsService {
-  documents: Document[]=[];
+  documents: Document [] = [];
   constructor() { }
 
   getDocument(idx: number) {
