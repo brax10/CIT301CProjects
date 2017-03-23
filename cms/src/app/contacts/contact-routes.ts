@@ -5,5 +5,5 @@ import {Routes} from "@angular/router";
 export const CONTACT_ROUTES: Routes = [
     { path: 'new', component: ContactEditComponent },
     { path: ':id/detail', component: ContactsDetailComponent },
-    { path: ':id/edit', component: ContactEditComponent }
+    { path: ':id/detail/edit', component: ContactEditComponent }
 ];

@@ -22,8 +22,8 @@ export class ContactsDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.route.params.subscribe(
         (params: any) => {
-          this.contact.contactId = params['id'];
-          this.contact = this.contactsService.getContactById(this.contact.contactId);
+          let contactId = params['id'];
+          this.contact = this.contactsService.getContactById(contactId);
           this.contactGroup = this.contact.group;
           this.selectedContact = this.contact;
         }

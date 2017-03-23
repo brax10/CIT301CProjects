@@ -10,7 +10,7 @@ import {Contact} from "../contact";
         </div>
         <span class="pull-right">
             <img class="img-responsive"
-                 src="{{contact?.imageUrl}}"
+                 src="{{contact?.imagePath}}"
                  style="max-height: 50px;"/>
         </span>
       </a>
