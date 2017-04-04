@@ -12,8 +12,10 @@
           size="120"
           max="255"
           name="message"
-          ngmodel
-          required>
+          [ngModel]=message?.text
+          required
+          #message="ngModel">
+        <span class="help-block" *ngIf="!message.valid && message.touched">You must enter a message.</span>
       </div>
 
     </div>
