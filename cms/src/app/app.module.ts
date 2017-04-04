@@ -43,7 +43,8 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
     DocumentViewComponent,
     DocumentEditComponent,
     ContactGroupItemComponent,
-    ContactEditComponent
+    ContactEditComponent,
+    MessageNewComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,15 @@ import {Contact} from "./contact";
 @Injectable()
 export class ContactsService {
   contacts: Contact[] = [];
-  constructor() { }
+  currentContact: Contact;
+
+  constructor() {
+    this.currentContact = new Contact("18", "Braxton Ward", "ward@byui.edu", "801-549-8876", "../../imgages/braxton.jpg", null);
+  }
+
+  getCurrentContact() {
+    return this.currentContact;
+  }
 
   getContact(idx: number) {
       return this.contacts[idx];
