@@ -27,11 +27,11 @@ export class DocumentsService {
 
   addDocument(document: Document) {
     this.documents.push(document);
-    this.documentsChanged.next(this.documents.slice());
+    //this.documentsChanged.next(this.documents.slice());
   }
 
   updateDocument(oldDoc: Document, newDoc: Document) {
     this.documents[oldDoc.id] = newDoc;
-    this.documentsChanged.next(this.documents.slice());
+    //this.documentsChanged.next(this.documents.slice());
   }
 }

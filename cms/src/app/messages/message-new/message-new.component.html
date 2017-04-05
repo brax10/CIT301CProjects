@@ -1,6 +1,6 @@
 <div class="col-xs-12">
 
-  <form id="message-add" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form id="message-add" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
     <div class="row">
 
       <div class="col-sm-12 form-group">
@@ -15,7 +15,7 @@
           [ngModel]=message?.text
           required
           #message="ngModel">
-        <span class="help-block" *ngIf="!message.valid && message.touched">You must enter a message.</span>
+        <div class="help-block bg-danger" *ngIf="!message.valid && message.touched">You must enter a message.</div>
       </div>
 
     </div>

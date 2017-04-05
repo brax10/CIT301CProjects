@@ -13,18 +13,18 @@ export class DocumentEditComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   oldDocument: Document;
   editMode: boolean = false;
-  documentId: number;
+  documentId: any;
 
   constructor(private documentsService: DocumentsService,
               private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(
+    this.subscription = this.route.params.subscribe(
         (params: Params) => {
-          this.documentId = params['id'];
+          this.documentId = params['idx'];
 
-          if(this.documentId != null) {
+          if(this.documentId && this.documentId != 'new') {
             this.editMode = true;
             this.oldDocument = this.documentsService.getDocument(this.documentId);
           } else {

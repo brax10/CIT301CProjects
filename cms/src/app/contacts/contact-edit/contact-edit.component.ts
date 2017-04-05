@@ -14,7 +14,7 @@ export class ContactEditComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private editMode: boolean = false;
   private hasGroup: boolean = false;
-  private contactIdx: number;
+  private contactIdx: any;
   private contact: Contact;
   private groupContacts: Contact[] = [];
   private invalidGroupContact: boolean = true;
@@ -28,13 +28,13 @@ export class ContactEditComponent implements OnInit, OnDestroy {
     this.hasGroup = false;
     this.invalidGroupContact = false;
 
-    this.route.params.subscribe(
-        (params: Params) => {
-          this.contactIdx = params['idx'];
-          this.contact = this.contactsService.getContact(this.contactIdx);
+    this.subscription = this.route.params.subscribe(
+        (params: any) => {
+          this.contactIdx = params['id'];
+          this.contact = this.contactsService.getContactById(this.contactIdx);
           this .editMode = true;
 
-          if (this.contact.group != null && this.contact.group.length > 0) {
+          if (this.contact.group && this.contact.group.length > 0) {
             this.hasGroup = true;
             this.groupContacts = this.contact.group.slice();
           }
@@ -63,7 +63,7 @@ export class ContactEditComponent implements OnInit, OnDestroy {
   }
 
   onCancel() {
-    this.router.navigate(['detail']);
+    this.router.navigate(['contacts']);
   }
 
   isInvalidContact(newContact: Contact) : boolean {

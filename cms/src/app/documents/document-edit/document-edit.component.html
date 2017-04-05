@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-body">
 
-    <form id="document-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form id="document-edit" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
       <div class="row">
 
         <div class="col-sm-12 form-group">
@@ -16,7 +16,7 @@
             [ngModel]=oldDocument?.name
             required
             #name="ngModel">
-          <span class="help-block" *ngIf="!name.valid && name.touched">You must specify a document title</span>
+          <div class="help-block bg-danger" *ngIf="!name.valid && name.touched">You must specify a document title</div>
         </div>
 
         <div class="col-sm-12 form-group">
@@ -43,7 +43,7 @@
             [ngModel]=oldDocument?.url
             required
             #documentUrl="ngModel">
-          <span class="help-block" *ngIf="!documentUrl.valid && documentUrl.touched">You must specify a valid URL for the document.</span>
+          <div class="help-block bg-danger" *ngIf="!documentUrl.valid && documentUrl.touched">You must specify a valid URL for the document.</div>
 
         </div>
       </div>

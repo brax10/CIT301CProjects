@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-body">
 
-    <form id="contact-edit" (ngSubmit)="onSubmit(value)" #f="ngForm">
+    <form id="contact-edit" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="name">Name</label>
@@ -15,7 +15,7 @@
             [ngModel]=contact?.name
             required
             #name="ngModel">
-          <span class="helper-block" *ngIf="!name.valid && name.touched"></span>
+          <div class="helper-block bg-danger" *ngIf="!name.valid && name.touched">Invalid name</div>
         </div>
 
         <div class="col-sm-12 form-group">
@@ -29,8 +29,8 @@
             name="email"
             [ngModel]=contact?.email
             #email="ngModel"
-            pattern="^s+/@s+">
-          <span class="helper-block" *ngIf="!email.valid && email.touched"></span>
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+          <div class="helper-block bg-danger" *ngIf="!email.valid && email.touched">Invalid email</div>
         </div>
 
         <div class="col-sm-12 form-group">
