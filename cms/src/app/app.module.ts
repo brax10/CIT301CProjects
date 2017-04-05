@@ -20,9 +20,10 @@ import {routing} from "./app-routing";
 import { MessageNewComponent } from './messages/message-new/message-new.component';
 import { DocumentViewComponent } from './documents/document-view/document-view.component';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
-import {ContactGroupItemComponent} from "./contacts/contacts-detail/contact-group-item.component";
+import {ContactGroupItemComponent} from "./contacts/contact-group-item.component";
 import {WindRefService} from "./wind-ref.service";
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import {DndModule} from "ng2-dnd";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    DndModule.forRoot()
   ],
   providers: [ WindRefService ],
   bootstrap: [AppComponent]

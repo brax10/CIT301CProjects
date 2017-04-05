@@ -10,6 +10,30 @@ export class ContactsService {
     this.currentContact = new Contact("18", "Braxton Ward", "ward@byui.edu", "801-549-8876", "../../imgages/braxton.jpg", null);
   }
 
+  addContact(contact: Contact) {
+    if(!contact)
+      return;
+    this.contacts.push(contact);
+    this.contacts = this.contacts.sort(this.compareNames);
+  }
+
+  updateContact(oldContact: Contact, newContact: Contact) {
+    if (!oldContact || !newContact) return;
+
+    this.contacts[this.contacts.indexOf(oldContact)] = newContact;
+    this.contacts = this.contacts.sort(this.compareNames);
+  }
+
+  deleteContact(contact: Contact) {
+    if (!contact) return;
+
+    const pos = this.contacts.indexOf(contact);
+    if(pos < 0) return;
+
+    this.contacts.splice(pos, 1);
+    this.contacts = this.contacts.sort(this.compareNames);
+  }
+
   getCurrentContact() {
     return this.currentContact;
   }
