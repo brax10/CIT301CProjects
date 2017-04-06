@@ -9,7 +9,7 @@ export class DocumentsService {
   private documents: Document [] = [];
   getDocumentsEmitter = new EventEmitter<Document[]>();
   currentDocumentId;
-  firebase: string = 'https://brax10cms.firebaseio.com/documents/json';
+  firebase: string = 'https://brax10cms-7526b.firebaseio.com/documents.json';
 
   constructor(private http: Http ) {
     this.initDocuments();
@@ -18,7 +18,9 @@ export class DocumentsService {
 
   initDocuments() {
     return this.http.get(this.firebase)
-        .map((response: Response) => response.json())
+        .map((response: Response) => {
+                    return response.json()
+            })
         .subscribe(
             (data: Document[]) => {
               this.documents = data;

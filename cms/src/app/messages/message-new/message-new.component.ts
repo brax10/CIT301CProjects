@@ -20,7 +20,7 @@ export class MessageNewComponent implements OnInit {
   }
 
   onSubmit(value) {
-    const newMessage = new Message("", "", value.message, this.sender.name, );
+    const newMessage = new Message("", "Braxton","", value.message );
     this.messagesService.addMessage(newMessage);
     this.router.navigate(['messages']);
   }

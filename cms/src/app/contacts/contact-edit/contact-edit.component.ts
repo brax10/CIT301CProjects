@@ -51,7 +51,7 @@ export class ContactEditComponent implements OnInit, OnDestroy {
     let newContact = new Contact(null, value.name, value.email, value.phone, value.imagePath, this.groupContacts);
 
     if (this.editMode) {
-      newContact.contactId = this.contact.contactId;
+      newContact.id = this.contact.id;
 
       this.contactsService.updateContact(this.contact,newContact);
     }
@@ -59,7 +59,7 @@ export class ContactEditComponent implements OnInit, OnDestroy {
       this.contactsService.addContact(this.contact);
     }
 
-    this.router.navigate(['detail']);
+    this.router.navigate(['contacts']);
   }
 
   onCancel() {
@@ -69,10 +69,10 @@ export class ContactEditComponent implements OnInit, OnDestroy {
   isInvalidContact(newContact: Contact) : boolean {
     if (!newContact) return true;
 
-    if (newContact.contactId === this.contact.contactId) return true;
+    if (newContact.id === this.contact.id) return true;
 
     for (let i = 0; i < this.groupContacts.length; i++) {
-      if (newContact.contactId === this.groupContacts[i].contactId)
+      if (newContact.id === this.groupContacts[i].id)
         return true;
     }
 

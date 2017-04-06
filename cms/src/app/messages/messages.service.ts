@@ -9,7 +9,7 @@ import "rxjs";
 export class MessagesService {
   private messages: Message[] = [];
   getMessagesEmitter = new EventEmitter<Message[]>();
-  firebase: string = 'https://brax10cms.firebaseio.com/messages/json';
+  firebase: string = 'https://brax10cms-7526b.firebaseio.com/messages.json';
   currentMessageId;
 
   constructor(private http: Http) {
