@@ -12,12 +12,18 @@ export class ContactListComponent implements OnInit {
 
   @Output() selectedContact = new EventEmitter<Contact>();
   contacts: Contact[] = [];
+  term: string;
 
   constructor(private contactService: ContactsService) {
   }
 
   ngOnInit() {
-    this.contacts = this.contactService.getContacts();
+    this.contactService.getContactsEmitter.subscribe(
+        (contact: Contact[]) => this.contacts = contact);
+  }
+
+  onKeyPress(value: string) {
+    this.term = value;
   }
 }
 
